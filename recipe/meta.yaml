@@ -1,4 +1,4 @@
-{% set version = "2021.7.2" %}
+{% set version = "2021.8.0" %}
 
 package:
   name: distributed
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/distributed/distributed-{{ version }}.tar.gz
-  sha256: 5c03aae2f2ba7b0945b423162db4f2b2ec01faf73f91e0e38c1bc5b2f9ed216d
+  sha256: d2011547f9105e33cee8736a06163d0463fa59ba57dfc30924ffc73c40636329
 
 build:
   number: 0
@@ -31,6 +31,7 @@ requirements:
     - cloudpickle >=1.5.0
     - cytoolz >=0.8.2
     - dask-core {{ version }}
+    - jinja2
     - msgpack-python >=0.6.0
     - psutil >=5.0
     - pyyaml
