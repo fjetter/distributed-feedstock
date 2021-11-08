@@ -1,4 +1,5 @@
-{% set version = "2021.11.0" %}
+{% set version = "2021.11.1" %}
+
 
 package:
   name: distributed
@@ -6,16 +7,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/distributed/distributed-{{ version }}.tar.gz
-  sha256: 4ecbb1e1d61a55d226a67146076686d5cb6091645732d5e14f7330820dcc682d
+  sha256: 9350a40ba84c4c75b140b5e9ee5f6adaef737f16aaf2e5cf013744f29614fd0a
 
 build:
-  number: 1
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - dask-scheduler=distributed.cli.dask_scheduler:go
-    - dask-ssh=distributed.cli.dask_ssh:go
-    - dask-worker=distributed.cli.dask_worker:go
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
-  skip: true  # [py<37]
+    - dask-scheduler = distributed.cli.dask_scheduler:go
+    - dask-ssh = distributed.cli.dask_ssh:go
+    - dask-worker = distributed.cli.dask_worker:go
 
 requirements:
   build:
@@ -55,16 +55,19 @@ test:
     - distributed.diagnostics
     - distributed.protocol
   commands:
+    - pip check
     - dask-scheduler --help
     - dask-ssh --help
     - dask-worker --help
+  requires:
+    - pip
 
 about:
-  home: http://distributed.readthedocs.io/en/latest/
+  home: https://distributed.dask.org
+  summary: Distributed scheduler for Dask
   license: BSD-3-Clause
-  license_file: LICENSE.txt
   license_family: BSD
-  summary: Distributed computing with Dask
+  license_file: LICENSE.txt
   description: |
     Distributed is a lightweight library for distributed computing in Python.
     It extends both the concurrent.futures and dask APIs to moderate sized
