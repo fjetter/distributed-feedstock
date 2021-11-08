@@ -1,13 +1,13 @@
 About distributed
 =================
 
-Home: http://distributed.readthedocs.io/en/latest/
+Home: https://distributed.dask.org
 
 Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/distributed-feedstock/blob/master/LICENSE.txt)
 
-Summary: Distributed computing with Dask
+Summary: Distributed scheduler for Dask
 
 Development: https://github.com/dask/distributed
 
