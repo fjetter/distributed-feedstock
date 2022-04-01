@@ -14,9 +14,9 @@ build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - dask-scheduler = distributed.cli.dask_scheduler:go
-    - dask-ssh = distributed.cli.dask_ssh:go
-    - dask-worker = distributed.cli.dask_worker:go
+    - dask-scheduler = distributed.cli.dask_scheduler:main
+    - dask-ssh = distributed.cli.dask_ssh:main
+    - dask-worker = distributed.cli.dask_worker:main
 
 requirements:
   host:
