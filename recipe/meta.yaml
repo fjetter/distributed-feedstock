@@ -1,4 +1,4 @@
-{% set version = "2022.3.0" %}
+{% set version = "2022.4.0" %}
 
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/distributed/distributed-{{ version }}.tar.gz
-  sha256: e3d8053720cd58a3a254e8862900fec1e0940e9e34b044482142d836cd1ed892
+  sha256: e59bb9061bbe496b017c4374d4e76bed0e22df22bbdbd93c1cc5d60642c20671
 
 build:
   number: 0
@@ -37,6 +37,7 @@ requirements:
     - tblib >=1.6.0
     - toolz >=0.8.2
     - tornado >=6.0.3
+    - urllib3
     - zict >=0.1.3
   run_constrained:
     - openssl !=1.1.1e
